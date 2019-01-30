@@ -41,6 +41,9 @@ Vue.filter("datatime",(val)=>{
 Vue.filter("currency",(val)=>{
   return "¥"+val.toFixed(2)
 })
+Vue.filter("tableStatus",(val)=>{
+  return val==1?"空闲":val==2?"预定":val==3?"占用":"其它"
+})
 
 
 new Vue({
