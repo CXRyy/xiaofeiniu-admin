@@ -54,7 +54,6 @@
         var url=this.$store.state.globalSettings.apiUrl+"/admin/settings";
         this.$axios.get(url).then((res)=>{
           this.$store.commit("setGlobalSettings",res.data);
-          console.log(this.$store.state.globalSettings)
         }).catch((err)=>{
           console.log(err);
         })
