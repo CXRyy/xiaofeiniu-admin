@@ -5,8 +5,8 @@
       <el-breadcrumb-item>桌台管理</el-breadcrumb-item>
       <el-breadcrumb-item>桌台列表</el-breadcrumb-item>
     </el-breadcrumb>
-    <br>
-    <el-row :gutter="20">
+    <br/>
+    <el-row>
       <el-col :xs="12" :sm="8" :md="6" :lg="4" :xl="2" v-for="table of tableList">
         <xfu-table :table="table"></xfu-table>
       </el-col>
@@ -24,8 +24,8 @@
     methods:{
       getList(){
         var url=this.$store.state.globalSettings.apiUrl+"/admin/table";
-        this.$axios.get(url).then((res)=>{
-          this.tableList=res.data;
+        this.$axios.get(url).then(({data})=>{
+          this.tableList=data;
         }).catch((err)=>{
           console.log(err);
         })
